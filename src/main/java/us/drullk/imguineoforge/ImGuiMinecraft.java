@@ -1,4 +1,4 @@
-package us.drullk.imgui;
+package us.drullk.imguineoforge;
 
 import imgui.ImGui;
 import imgui.ImGuiIO;
@@ -9,7 +9,7 @@ import imgui.internal.ImGuiContext;
 import net.minecraft.client.Minecraft;
 import net.neoforged.fml.loading.ImmediateWindowHandler;
 import org.lwjgl.glfw.GLFW;
-import us.drullk.imgui.core.ModInitializer;
+import us.drullk.imguineoforge.core.ModInitializer;
 
 public class ImGuiMinecraft {
 	public static final ImGuiImplGl3 IMGUI_GL3 = new ImGuiImplGl3();

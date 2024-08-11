@@ -1,4 +1,4 @@
-package us.drullk.imgui.core;
+package us.drullk.imguineoforge.core;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -6,7 +6,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
-import us.drullk.imgui.diagnostic.ImGuiDebugPanels;
+import us.drullk.imguineoforge.diagnostic.ImGuiDebugPanels;
 
 import java.nio.file.Path;
 

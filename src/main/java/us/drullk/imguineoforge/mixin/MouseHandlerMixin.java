@@ -1,11 +1,11 @@
-package us.drullk.imgui.mixin;
+package us.drullk.imguineoforge.mixin;
 
 import net.minecraft.client.MouseHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import us.drullk.imgui.ImGuiMinecraft;
+import us.drullk.imguineoforge.ImGuiMinecraft;
 
 @Mixin(MouseHandler.class)
 public class MouseHandlerMixin {

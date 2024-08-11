@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "us.drullk.imgui.mixin",
+  "package": "us.drullk.imguineoforge.mixin",
   "compatibilityLevel": "JAVA_17",
   "injectors": {
     "defaultRequire": 1

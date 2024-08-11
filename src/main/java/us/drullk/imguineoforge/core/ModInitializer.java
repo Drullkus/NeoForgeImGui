@@ -1,4 +1,4 @@
-package us.drullk.imgui.core;
+package us.drullk.imguineoforge.core;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
@@ -24,6 +24,6 @@ public class ModInitializer {
     }
 
     public static ResourceLocation prefix(String path) {
-        return new ResourceLocation(MODID, path);
+        return ResourceLocation.fromNamespaceAndPath(MODID, path);
     }
 }

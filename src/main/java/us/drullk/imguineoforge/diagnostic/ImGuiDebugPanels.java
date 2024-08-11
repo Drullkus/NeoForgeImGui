@@ -1,4 +1,4 @@
-package us.drullk.imgui.diagnostic;
+package us.drullk.imguineoforge.diagnostic;
 
 import com.mojang.blaze3d.pipeline.RenderTarget;
 import com.mojang.blaze3d.platform.Window;
@@ -7,6 +7,7 @@ import imgui.flag.ImGuiCond;
 import imgui.flag.ImGuiInputTextFlags;
 import imgui.flag.ImGuiWindowFlags;
 import imgui.type.ImBoolean;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 
@@ -17,7 +18,7 @@ public class ImGuiDebugPanels {
 	private static final int[] FBO_VIEW_SIZE = new int[2];
 	public static ImBoolean SHOW = new ImBoolean(true);
 
-	public static void onRender(GuiGraphics guiGraphics, float partialTick) {
+	public static void onRender(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
 		screenSizingPanel();
 	}
 
