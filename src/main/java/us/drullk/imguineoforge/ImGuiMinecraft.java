@@ -7,9 +7,12 @@ import imgui.gl3.ImGuiImplGl3;
 import imgui.glfw.ImGuiImplGlfw;
 import imgui.internal.ImGuiContext;
 import net.minecraft.client.Minecraft;
+import net.neoforged.fml.loading.FMLConfig;
 import net.neoforged.fml.loading.ImmediateWindowHandler;
 import org.lwjgl.glfw.GLFW;
 import us.drullk.imguineoforge.core.ModInitializer;
+
+import java.util.Set;
 
 public class ImGuiMinecraft {
 	public static final ImGuiImplGl3 IMGUI_GL3 = new ImGuiImplGl3();
@@ -22,14 +25,15 @@ public class ImGuiMinecraft {
 	private static boolean frameActive = false;
 
 	static {
-		ImGuiMinecraft.setupImGui(genImguiGlVersionString(), !Minecraft.ON_OSX);
+		Set<String> crashingProviders = Set.of("fmlearlywindow"); // FIXME Something in fmlearlywindow causes ImGui to crash on macOS
+		ImGuiMinecraft.setupImGui(genImguiGlVersionString(), !(Minecraft.ON_OSX && crashingProviders.contains(FMLConfig.getConfigValue(FMLConfig.ConfigValue.EARLY_WINDOW_PROVIDER))));
 	}
 
 	public static void setupImGui(final String glVersionString, boolean multiViewport) {
 		ImGuiIO io = ImGui.getIO();
 
-		if (multiViewport) // FIXME Crash
-			io.addConfigFlags(ImGuiConfigFlags.ViewportsEnable);
+		// FIXME macOS caveat: Do not resize the windows while outside the viewport! Resizing them is wonky.
+		if (multiViewport) io.addConfigFlags(ImGuiConfigFlags.ViewportsEnable);
 
 		io.setBackendPlatformName("ImGui Minecraft");
 		io.setConfigWindowsMoveFromTitleBarOnly(true);
