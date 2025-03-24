@@ -28,7 +28,7 @@ public class ClientLoader {
 		if (FMLLoader.isProduction()) return;
 
 		// Define the base path and the relative path to the native library. Expects game root dir to be /runs/client/.
-		String relativePath = "../../build/resources/main/io/imgui/java/native-bin/";
+		String relativePath = "../out/production/resources/io/imgui/java/native-bin/";
 		// Resolve the absolute path to the native library
 		Path nativeLibPath = FMLPaths.GAMEDIR.get().resolve(relativePath).normalize();
 
